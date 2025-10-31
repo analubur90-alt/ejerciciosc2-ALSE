@@ -1,0 +1,20 @@
+#ifndef SISTEMA_ALQUILER_H
+#define SISTEMA_ALQUILER_H
+
+#include "Vehiculo.h"
+#include <vector>
+#include <memory>
+#include <string>
+
+class SistemaAlquiler {
+private:
+    std::vector<std::shared_ptr<Vehiculo>> vehiculos;
+
+public:
+    void registrarVehiculo(std::shared_ptr<Vehiculo> vehiculo);
+    void mostrarDisponibles() const;
+    void alquilarVehiculo(const std::string& placa);
+    void devolverVehiculo(const std::string& placa);
+};
+
+#endif
